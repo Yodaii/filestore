@@ -35,6 +35,25 @@
 		<maven.compiler.source>1.7</maven.compiler.source>
 	</properties>
 
+	<profiles>
+	    <profile>
+	        <id>openshift</id>
+	        <build>
+	            <finalName>filestore-miage</finalName>
+	            <plugins>
+	                <plugin>
+	                    <artifactId>maven-war-plugin</artifactId>
+	                    <version>2.4</version>
+	                    <configuration>
+	                        <outputDirectory>webapps</outputDirectory>
+	                        <warName>ROOT</warName>
+	                    </configuration>
+	                </plugin>
+	            </plugins>
+	        </build>
+	    </profile>
+	  </profiles>
+
 	<organization>
 		<name>Miage Nancy</name>
 		<url>http://www.miage-nancy.fr</url>
